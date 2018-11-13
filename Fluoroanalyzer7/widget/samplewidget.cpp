@@ -230,7 +230,7 @@ void CSampleWidget::updatarecord(QString table,int first,bool up_down)
 
                 CMyButton *pButton = new CMyButton(m_samplerecord);
                 pButton->setText(tr("Show"));
-                pButton->setStyleSheet(FONTFAMILY + FONT_SIZE_6);
+                pButton->setStyleSheet(FONTFAMILY + FONT_SIZE_7);
                 pButton->setMaximumWidth(60);
                 pButton->setMinimumWidth(60);
                 pButton->setMaximumHeight(30);
@@ -340,7 +340,7 @@ void CSampleWidget::updatarecord(QString table,int first,bool up_down)
 
                 CMyButton *pButton = new CMyButton(m_samplerecord);
                 pButton->setText(tr("Show"));
-				pButton->setStyleSheet(FONTFAMILY + FONT_SIZE_6);
+				pButton->setStyleSheet(FONTFAMILY + FONT_SIZE_7);
                 pButton->setMaximumWidth(60);
                 pButton->setMinimumWidth(60);
                 pButton->setMaximumHeight(30);

@@ -134,7 +134,7 @@ void CDetailTest::InitUI()
     }
     QStringList headers;
     //headers << tr("流水号") << tr("日期") << tr("批次") << tr("项目") << tr("结果") << tr("单位");
-    headers << tr("Serial") << tr("Date") << tr("Lot") << tr("Item") << tr("Result") << tr("Unit");
+    headers << tr("SN") << tr("Date") << tr("Lot") << tr("Item") << tr("Result") << tr("Unit");
     m_pTestRecord->setHorizontalHeaderLabels(headers);
 
     m_pBtCureTrace = new XButton(this);

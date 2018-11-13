@@ -394,8 +394,8 @@ void CDetectWidget::slotclickclear()
         else
         {
             m_xtabwg->setEnabled(false);
-            m_promptbox->settitle(tr("Other cartridges are tesing,\n please confirm to clear or not.\n\nConfirm：clear cartridge    Cancel： return to test"));
-            m_promptbox->setnsec(6);
+            m_promptbox->settitle(tr("Other cartridges are waiting for test,\n please confirm to clear or not.\n\nConfirm：OK  Cancel： Return"));
+            m_promptbox->setnsec(6); 
             m_promptbox->setwhichbutton(1);
             m_promptbox->setpromptser(0);
             m_promptbox->show();

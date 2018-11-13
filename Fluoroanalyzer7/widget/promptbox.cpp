@@ -19,34 +19,38 @@ XPromptBox::XPromptBox(QWidget *parent): QWidget(parent)
     m_showtext->setStyleSheet("color:rgb(255, 255, 255);" + FONTFAMILY + FONT_SIZE_6);
     m_showtext->setWordWrap(true);
 
+	m_ok_text = "Confirm";
+	m_cancel_text = "Cancel";
+	
     m_ok = new XButton(this);
     m_ok->setGeometry(30,165,140,50);
-    m_ok->setText(tr("Confirm"));
+    m_ok->setText(m_ok_text);
     connect(m_ok, SIGNAL(sigbtnclick()), this, SLOT(slotclickok()));
 
     m_cancel = new XButton(this);
     m_cancel->setGeometry(230,165,140,50);
-    m_cancel->setText(tr("Cancel"));
+    m_cancel->setText(m_cancel_text);
     connect(m_cancel, SIGNAL(sigbtnclick()), this, SLOT(slotclickcancel()));
 
     m_whichone = 0;
+	
 
 }
 
 void XPromptBox::showEvent(QShowEvent *)
 {
     m_showtext->setText(m_title);
-    m_ok->setText(tr("Confirm"));
-    m_cancel->setText(tr("Cancel"));
+    m_ok->setText(m_ok_text);
+    m_cancel->setText(m_cancel_text);
     if(m_runnsec > 0)
     {
         if(m_whichone == 0)
         {
-            m_ok->setText(tr("Confirm")+"("+QString::number(m_runnsec)+")");
+            m_ok->setText(m_ok_text +"("+QString::number(m_runnsec)+")");
         }
         else
         {
-            m_cancel->setText(tr("Cancel")+"("+QString::number(m_runnsec)+")");
+            m_cancel->setText(m_cancel_text+"("+QString::number(m_runnsec)+")");
         }
         m_1sec->start(1000);
     }
@@ -59,13 +63,13 @@ void XPromptBox::slot1sec()
 {
     if(m_whichone == 0)
     {
-        m_ok->setText(tr("Confirm")+"("+QString::number(m_runnsec)+")");
-        m_cancel->setText(tr("Cancel"));
+        m_ok->setText(m_ok_text+"("+QString::number(m_runnsec)+")");
+        m_cancel->setText(m_cancel_text);
     }
     else
     {
-        m_ok->setText(tr("Confirm"));
-        m_cancel->setText(tr("Cancel")+"("+QString::number(m_runnsec)+")");
+        m_ok->setText(m_ok_text);
+        m_cancel->setText(m_cancel_text+"("+QString::number(m_runnsec)+")");
     }
     m_runnsec--;
     if(m_runnsec < 0)
@@ -157,6 +161,6 @@ void XPromptBox::showprompt(QString title, int time, int button, XBUTTON_EM def)
 }
 void XPromptBox::setOkText(QString okText)
 {
-    m_ok->setText(tr(okText));
+    m_ok->setText(okText);
 }
 

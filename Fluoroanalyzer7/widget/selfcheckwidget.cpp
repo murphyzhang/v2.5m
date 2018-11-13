@@ -22,11 +22,17 @@ CSelfCheckWidget::CSelfCheckWidget(QWidget *parent): CBaseFunWidget(parent)
            <<tr("Bar code module detection...")\
           <<tr("Communication module detection...")\
          <<tr("Transmission module detection...");
-    m_strinfo<<("进卡口有异物")\
+   /* m_strinfo<<("进卡口有异物")\
             <<("通信线路异常")\
            <<("通信线路异常")\
           <<("通信线路异常")\
-         <<("无法定位卡槽");
+         <<("无法定位卡槽"); 
+		 */
+	m_strinfo<<("There are sth. wrong at the entrance")\
+            <<("Communication module exception")\
+           <<("Communication module exception")\
+          <<("Communication module exception")\
+         <<("Unable to locate card slot");
 
     for(int i = 0; i < CHECK_NUM; i++)
     {
@@ -37,9 +43,9 @@ CSelfCheckWidget::CSelfCheckWidget(QWidget *parent): CBaseFunWidget(parent)
         m_checkpro[i].m_checkicon = new QLabel(this);
         m_checkpro[i].m_checkname->setStyleSheet("color:rgb(255, 255, 255);" + FONTFAMILY + FONT_SIZE_2);
         m_checkpro[i].m_checkinfo->setStyleSheet("color:rgb(176, 23, 31);" + FONTFAMILY + FONT_SIZE_2);
-        m_checkpro[i].m_checkname->setGeometry(100,130+60*i,500,40);
+        m_checkpro[i].m_checkname->setGeometry(60,130+60*i,590,40);
         m_checkpro[i].m_checkinfo->setGeometry(380,130+60*i,250,40);
-        m_checkpro[i].m_checkicon->setGeometry(650,130+60*i,40,40);
+        m_checkpro[i].m_checkicon->setGeometry(710,130+60*i,40,40);
 
         m_checkpro[i].m_checked = NOT_CHECK;
         m_checkpro[i].m_checkok = false;

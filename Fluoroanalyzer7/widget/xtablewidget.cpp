@@ -138,6 +138,7 @@ void XTableWidget::initprowidget()
 {
     m_proinfo = new QTableWidget(this);
     m_proinfo->setGeometry(340,0,440,225);
+	m_proinfo->setStyleSheet(FONTFAMILY + FONT_SIZE_5);
     m_proinfo->setSelectionBehavior(QTableWidget::SelectRows);
     m_proinfo->setEditTriggers(QTableWidget::NoEditTriggers);
     m_proinfo->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -147,8 +148,8 @@ void XTableWidget::initprowidget()
     //m_resulttab->verticalHeader()->setVisible(false);   //隐藏列表头
     //m_resulttab->verticalHeader()->setMinimumWidth(40);
     m_proinfo->horizontalHeader()->setFixedHeight(40); //设置表头的高度
-    m_proinfo->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;};" + FONTFAMILY + FONT_SIZE_6); //设置表头背景色 skyblue
-    m_proinfo->setStyleSheet("selection-background-color:lightblue;" + FONTFAMILY + FONT_SIZE_6); //设置选中背景色
+    m_proinfo->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;};" + FONTFAMILY + FONT_SIZE_5); //设置表头背景色 skyblue
+    m_proinfo->setStyleSheet("selection-background-color:lightblue;" + FONTFAMILY + FONT_SIZE_5); //设置选中背景色
     m_proinfo->horizontalHeader()->setResizeMode(QHeaderView::Fixed);
 
     m_proinfo->verticalHeader()->setVisible(false);
@@ -157,10 +158,10 @@ void XTableWidget::initprowidget()
     m_proinfo->setColumnCount(4);
     m_proinfo->setHorizontalHeaderLabels(QStringList()<<tr("Lot No.")<<tr("Result")<<tr("RV")<<tr("Unit"));
 
-    m_proinfo->setColumnWidth(0,130);
-    m_proinfo->setColumnWidth(1,140);
+    m_proinfo->setColumnWidth(0,120);
+    m_proinfo->setColumnWidth(1,130);
     m_proinfo->setColumnWidth(2,96);
-    m_proinfo->setColumnWidth(3,80);
+    m_proinfo->setColumnWidth(3,100);
 
     m_proinfo->setRowCount(6);
     for(int i=0;i<6;i++)
@@ -171,9 +172,6 @@ void XTableWidget::initprowidget()
             m_proinfo->item(i,j)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
             m_proinfo->item(i,j)->setFont(font);
             m_proinfo->item(i,j)->setTextColor(QColor(200,111,30));
-			if (j==3){
-				m_proinfo->item(i,j)->setStyleSheet(FONTFAMILY + FONT_SIZE_5););
-			}
         }
     }
 }

@@ -16,7 +16,7 @@ CShutdown::CShutdown(QWidget * parent): QPushButton(parent)
     connect(m_promptbox, SIGNAL(sigclickcancel(int)), this, SLOT(slotpromptcs(int)));
     //m_promptbox->settitle(tr("是否关机！\n\n确认：关机      取消：返回"));
     m_promptbox->settitle(tr("OK:Power off        Cancel:return"));
-	m_promptbox->setOkText("OK");
+	m_promptbox->setOkText(tr("OK"));
     connect(this, SIGNAL(clicked()), this, SLOT(onClick()));
 }
 

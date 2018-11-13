@@ -43,6 +43,8 @@ private:
     QTimer *m_1sec;
     int m_runnsec;
     QString m_title;
+    QString m_ok_text;
+    QString m_cancel_text;
 
 };
 

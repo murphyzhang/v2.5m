@@ -91,7 +91,7 @@ CBatchWidget::CBatchWidget(QWidget *parent): CBaseFunWidget(parent)
 
     m_searchlabel = new XLabel(this);
     m_searchlabel->setText(tr("Lot No.: Y"));
-    m_searchlabel->setGeometry(140, 200, 150, 50);
+    m_searchlabel->setGeometry(120, 200, 170, 50);
     m_searchlabel->hide();
 
     m_searchedit = new XLineEdit(this);
@@ -100,7 +100,7 @@ CBatchWidget::CBatchWidget(QWidget *parent): CBaseFunWidget(parent)
 
     m_searchprompt = new XLabel(this);
     m_searchprompt->setText(tr("Please enter 7 digital numbers"));
-    m_searchprompt->setGeometry(140, 260, 460, 50);
+    m_searchprompt->setGeometry(120, 260, 500, 50);
     m_searchprompt->hide();
 
     m_ok = new XButton(this);

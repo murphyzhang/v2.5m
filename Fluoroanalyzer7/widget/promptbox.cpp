@@ -161,6 +161,7 @@ void XPromptBox::showprompt(QString title, int time, int button, XBUTTON_EM def)
 }
 void XPromptBox::setOkText(QString okText)
 {
-    m_ok->setText(okText);
+    m_ok_text = okText;
+    m_ok->setText(m_ok_text);
 }
 

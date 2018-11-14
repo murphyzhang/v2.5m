@@ -20,7 +20,7 @@ CSearchWidget::~CSearchWidget()
 void CSearchWidget::InitUI()
 {
     m_pCbbKey = new QComboBox(this);
-    m_pCbbKey->setGeometry(80,50,80,40);
+    m_pCbbKey->setGeometry(60,50,100,40);
     m_pCbbKey->insertItem(DATE_SEARCH,tr("Date"));
     m_pCbbKey->insertItem(ID_SEARCH,tr("ID"));
     m_pCbbKey->insertItem(NAME_SEARCH,tr("Name"));

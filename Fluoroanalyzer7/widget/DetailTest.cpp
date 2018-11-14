@@ -58,12 +58,12 @@ void CDetailTest::InitUI()
     m_pLbAge = new XLabel(this);
     //m_pLbAge->setText(tr("年龄："));
     m_pLbAge->setText(tr("Age："));
-    m_pLbAge->setGeometry(570, 80, 80, 40);
+    m_pLbAge->setGeometry(590, 80, 80, 40);
     m_pLbAge->setStyleSheet(FONTFAMILY + FONT_SIZE_4);
 
     m_pLbAge_2 = new XLabel(this);
     m_pLbAge_2->setText(tr(""));
-    m_pLbAge_2->setGeometry(650,80,60,40);
+    m_pLbAge_2->setGeometry(670,80,60,40);
     m_pLbAge_2->setStyleSheet(FONTFAMILY + FONT_SIZE_4);
 
     m_pLbSampleNo= new XLabel(this);
@@ -85,7 +85,7 @@ void CDetailTest::InitUI()
 
     m_pLbSampleType_2 = new XLabel(this);
     m_pLbSampleType_2->setText(tr(""));
-    m_pLbSampleType_2->setGeometry(510,120,200,40);
+    m_pLbSampleType_2->setGeometry(510,120,220,40);
     m_pLbSampleType_2->setStyleSheet(FONTFAMILY + FONT_SIZE_4);
 
     m_pTestRecord = new QTableWidget(this);

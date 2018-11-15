@@ -92,7 +92,7 @@ void XTableWidget::initcardwidget()
 {
     m_cardinfo = new QTableWidget(this);
     m_cardinfo->setGeometry(0,0,320,290);//setStyleSheet("QDialog#filewnd{border:1px solid rgb(44,60,69);border-radius:5px}");
-    m_cardinfo->setStyleSheet(FONTFAMILY + FONT_SIZE_6);
+    m_cardinfo->setStyleSheet(FONTFAMILY + FONT_SIZE_5);
     m_cardinfo->setSelectionBehavior(QTableWidget::SelectRows);
     m_cardinfo->setEditTriggers(QTableWidget::NoEditTriggers);
     m_cardinfo->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -100,8 +100,8 @@ void XTableWidget::initcardwidget()
     //m_resulttab->verticalHeader()->setVisible(false);   //隐藏列表头
     //m_resulttab->verticalHeader()->setMinimumWidth(40);
     m_cardinfo->horizontalHeader()->setFixedHeight(40); //设置表头的高度
-    m_cardinfo->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;};" + FONTFAMILY + FONT_SIZE_6); //设置表头背景色
-    m_cardinfo->setStyleSheet("selection-background-color:lightblue;" + FONTFAMILY + FONT_SIZE_6); //设置选中背景色
+    m_cardinfo->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;};" + FONTFAMILY + FONT_SIZE_5); //设置表头背景色
+    m_cardinfo->setStyleSheet("selection-background-color:lightblue;" + FONTFAMILY + FONT_SIZE_5); //设置选中背景色
 
     m_cardinfo->horizontalHeader()->setResizeMode(QHeaderView::Fixed);
     m_cardinfo->verticalHeader()->setResizeMode(QHeaderView::Fixed);
@@ -352,7 +352,17 @@ void XTableWidget::xupdate_tab()
         m_cardinfo->item(row,2)->setText("---");
         if(m_cardlist.at(row)->hasbatch())
         {
-            m_cardinfo->item(row,2)->setText(m_cardlist.at(row)->m_res.pro[0].name);
+//            qDebug() << "getunite()" << m_cardlist.at(row)->getargdecode()->getunite();
+
+            if (m_cardlist.at(row)->getargdecode()->getunite() >= 3) {
+                if (m_cardlist.at(row)->m_res.pro[0].name == "FSH")
+                    m_cardinfo->item(row,2)->setText(tr("FSH+2"));
+                else if (m_cardlist.at(row)->m_res.pro[0].name == "cTnI")
+                    m_cardinfo->item(row,2)->setText(tr("cTnI+2"));
+            }
+            else {
+                m_cardinfo->item(row,2)->setText(m_cardlist.at(row)->m_res.pro[0].name);
+            }
 
             if(!m_cardlist.at(row)->gettestend())
             {

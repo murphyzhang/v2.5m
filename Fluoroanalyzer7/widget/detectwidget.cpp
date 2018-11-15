@@ -537,7 +537,8 @@ void CDetectWidget::slotqrscan()
             if(!this->isHidden() && !m_scancard->hascode())
             {
                 // m_promptbox->settitle(tr("当前批号%1，找不到对应数据，请插入芯片！\n确认：等待插入  取消：取消测试").arg(m_scancard->getbatch()));
-                m_promptbox->settitle(tr("Current Lot No. %1. Cannot find data. Please insert chip.        \n Confirmation: wait for insert  Cancel: cancel test").arg(m_scancard->getbatch()));
+                m_promptbox->settitle(tr("Current Lot No. %1.\n Please insert SD card.\n OK: Wait for insertion \n Cancel: Cancel the test").arg(m_scancard->getbatch()));
+				m_promptbox->setOkText(tr("OK"));;
                 m_promptbox->setnsec(6);
                 m_promptbox->setwhichbutton(0);
                 m_promptbox->setpromptser(2);
@@ -547,7 +548,8 @@ void CDetectWidget::slotqrscan()
         else if(!this->isHidden())
         {
             m_scancard->setstatestr(tr("Unidentifiable"));
-            m_promptbox->settitle(tr("Fail to recognize the current lot number,\ntacit to use the last lot number!\nConfirm：%1  Cancel：Manual editing").arg(m_lastbatch));
+            m_promptbox->settitle(tr("Fail to recognize the Lot No.!\nTacitly use the last Lot No.\n OK: %1 \n Cancel: Cancel the test").arg(m_lastbatch));
+			m_promptbox->setOkText(tr("OK"));;
             m_promptbox->setnsec(6);
             m_promptbox->setwhichbutton(0);
             m_promptbox->setpromptser(1);
@@ -594,7 +596,7 @@ void CDetectWidget::slotdetectsucc()
     //当前位置有卡
     if(m_detectcard != NULL)
     {
-        m_detectcard->setstatestr(tr("Complete"));
+        m_detectcard->setstatestr(tr("Completed"));
         m_detectcard->settestend(true);
 
         unsigned int * fldata = CCommonInterface::get_detection()->getfldata();
